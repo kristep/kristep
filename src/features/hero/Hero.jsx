@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as Logo } from "../../images/logo.svg";
+import Button from "../../components/button/Button";
 
 import "./hero.scss";
 // eslint-disable-next-line
@@ -16,7 +17,7 @@ const Hero = ({ isExpanded }) => {
           </q>
           <figcaption className="hero__quote-author">Kent Beck</figcaption>
         </figure>
-        <button className="btn btn_contact">Contact me</button>
+        <Button>Contact me</Button>
       </section>
     </div>
   );

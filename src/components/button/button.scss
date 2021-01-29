@@ -1,0 +1,16 @@
+@import '../../styles/base/base';
+
+$_color-hover: darken($color-contrast, 10%);
+
+.button {
+    background-color: $color-contrast;
+    border-radius: $border-radius;
+    color: $color-light;
+    font-size: $font-size-16;
+    padding: 7px;
+
+    &:hover {
+        background-color: $_color-hover;
+        transition: 0.3s;
+    }
+}

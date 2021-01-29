@@ -13,7 +13,7 @@ $_color-hero-background: #2d62819b;
 
     &__content {
         align-items: center;
-        background-color: $color-hero-background;
+        background-color: $_color-hero-background;
         color: $color-white;
         display: flex;
         flex-direction: column;
@@ -39,6 +39,7 @@ $_color-hero-background: #2d62819b;
 
     &__title {
         font-size: $font-size-24;
+        margin-bottom: 3rem;
         text-transform: uppercase;
     }
 
