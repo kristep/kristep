@@ -1,0 +1,54 @@
+@import '../../styles/base/base';
+@import '../../styles/mixins';
+
+$_color-hero-background: #2d62819b;
+
+.hero {
+    background-color: $color-light;
+    background-image: url('../../images/planet-1702788_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding: 25vh 0;
+
+    &__content {
+        align-items: center;
+        background-color: $color-hero-background;
+        color: $color-white;
+        display: flex;
+        flex-direction: column;
+        font-size: $font-size-18;
+        height: 75%;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 80rem;
+        min-height: 40rem;
+        padding-bottom: 4rem;
+        text-align: center;
+        width: 60%;
+
+        @include respond-to(785, max) {
+            width: 80%;
+        }
+    }
+
+    &__logo {
+        height: auto;
+        width: 20rem;
+    }
+
+    &__title {
+        font-size: $font-size-24;
+        text-transform: uppercase;
+    }
+
+    &__quote {
+        font-size: $font-size-18;
+        text-align: left;
+    }
+
+    &__quote-author {
+        font-style: italic;
+        text-align: right;
+    }
+}

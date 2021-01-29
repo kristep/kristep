@@ -1,0 +1,11 @@
+@import '../../styles/base/base';
+
+.main-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size-16;
+    justify-content: center;
+    max-width: 900px;
+    width: 90vw;
+}
