@@ -1,0 +1,24 @@
+@import '../../styles/base/base';
+$_z-index: 3;
+
+.header {
+    align-items: center;
+    background-color: $color-dark;
+    display: flex;
+    height: 7rem;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: $_z-index;
+
+    &--expanded {
+        background-color: $color-dark-big-header;
+        height: 15vh;
+    }
+
+    &__logo {
+        position: relative;
+        top: 2rem;
+        width: 17rem;
+    }
+}

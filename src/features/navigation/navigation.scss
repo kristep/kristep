@@ -1,0 +1,31 @@
+@import '../../styles/base/base';
+
+.navigation {
+    align-items: flex-end;
+    display: flex;
+    justify-self: flex-end;
+    top: 0;
+    transition: 0.4s;
+    z-index: $z-index-above;
+
+    &__link {
+        color: $color-white;
+        font-size: $font-size-18;
+        padding-left: 1rem;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-light;
+            font-weight: bold;
+        }
+    }
+
+    .active {
+        color: $color-contrast;
+        font-weight: bold;
+
+        &:hover {
+            color: $color-contrast;
+        }
+    }
+}
