@@ -10,6 +10,7 @@ $_background-color: transparentize($color-dark, 0.6);
     background-size: cover;
     height: 100vh;
     padding: 25vh 0;
+    width: 100vw;
 
     &__content {
         align-items: center;

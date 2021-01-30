@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import MainContent from "./features/main/MainContent";
 import Header from "./features/header/Header";
 import Hero from "./features/hero/Hero";
+import About from "./features/about/About";
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -28,6 +29,9 @@ function App() {
       <Header isExpanded={isExpanded} />
       <MainContent>
         <Hero isExpanded={isExpanded} />
+        <section className="main-content__section">
+          <About />
+        </section>
       </MainContent>
     </>
   );
