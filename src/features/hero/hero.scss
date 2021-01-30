@@ -1,7 +1,7 @@
 @import '../../styles/base/base';
 @import '../../styles/mixins';
 
-$_color-hero-background: #2d62819b;
+$_background-color: transparentize($color-dark, 0.6);
 
 .hero {
     background-color: $color-light;
@@ -13,7 +13,7 @@ $_color-hero-background: #2d62819b;
 
     &__content {
         align-items: center;
-        background-color: $_color-hero-background;
+        background-color: $_background-color;
         color: $color-white;
         display: flex;
         flex-direction: column;
@@ -33,6 +33,8 @@ $_color-hero-background: #2d62819b;
     }
 
     &__logo {
+        @include animation('fadeIn 0.4s');
+
         height: auto;
         width: 20rem;
     }

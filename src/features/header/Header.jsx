@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import Navigation from "../../features/navigation/Navigation";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 
 import "./header.scss";
-// eslint-disable-next-line
+
 const Header = ({ isExpanded }) => {
   return (
     <header className={isExpanded ? "header header--expanded" : "header"}>
@@ -11,6 +13,10 @@ const Header = ({ isExpanded }) => {
       <Navigation />
     </header>
   );
+};
+
+Header.propTypes = {
+  isExpanded: PropTypes.bool,
 };
 
 export default Header;

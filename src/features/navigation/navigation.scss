@@ -4,13 +4,14 @@
     align-items: flex-end;
     display: flex;
     justify-self: flex-end;
+    padding-right: 3rem;
     top: 0;
     transition: 0.4s;
     z-index: $z-index-above;
 
     &__link {
         color: $color-white;
-        font-size: $font-size-18;
+        font-size: $font-size-20;
         padding-left: 1rem;
         text-decoration: none;
 
@@ -22,7 +23,7 @@
 
     .active {
         color: $color-contrast;
-        font-weight: bold;
+        font-weight: 900;
 
         &:hover {
             color: $color-contrast;

@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import Button from "../../components/button/Button";
 
 import "./hero.scss";
-// eslint-disable-next-line
+
 const Hero = ({ isExpanded }) => {
   return (
     <div className="hero">
@@ -21,6 +23,10 @@ const Hero = ({ isExpanded }) => {
       </section>
     </div>
   );
+};
+
+Hero.propTypes = {
+  isExpanded: PropTypes.bool,
 };
 
 export default Hero;

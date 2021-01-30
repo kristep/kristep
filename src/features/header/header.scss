@@ -1,5 +1,8 @@
 @import '../../styles/base/base';
+@import '../../styles/mixins';
+
 $_z-index: 3;
+$_background-color: transparentize($color-dark, 0.7);
 
 .header {
     align-items: center;
@@ -8,15 +11,18 @@ $_z-index: 3;
     height: 7rem;
     justify-content: space-between;
     position: fixed;
+    transition: all 0.4s;
     width: 100%;
     z-index: $_z-index;
 
     &--expanded {
-        background-color: $color-dark-big-header;
+        background-color: $_background-color;
         height: 15vh;
     }
 
     &__logo {
+        @include animation('fadeIn 0.4s');
+
         position: relative;
         top: 2rem;
         width: 17rem;
