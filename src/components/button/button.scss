@@ -4,10 +4,12 @@ $_color-hover: darken($color-contrast, 10%);
 
 .button {
     background-color: $color-contrast;
+    border: unset;
     border-radius: $border-radius;
     color: $color-light;
+    cursor: pointer;
     font-size: $font-size-16;
-    padding: 7px;
+    padding: 0.7rem 1.4rem;
 
     &:hover {
         background-color: $_color-hover;

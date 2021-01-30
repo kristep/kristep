@@ -1,4 +1,5 @@
 @import '../../styles/base/base';
+@import '../../styles/mixins';
 
 .main-content {
     align-items: center;
@@ -8,7 +9,7 @@
     justify-content: center;
 
     &__section {
-        margin: 4rem 0;
+        margin: 8rem 0;
         width: 75vw;
     }
 }

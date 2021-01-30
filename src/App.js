@@ -4,6 +4,8 @@ import MainContent from "./features/main/MainContent";
 import Header from "./features/header/Header";
 import Hero from "./features/hero/Hero";
 import About from "./features/about/About";
+import Portfolio from "./features/portfolio/Portfolio";
+import Divider from "./components/divider/Divider";
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -29,8 +31,13 @@ function App() {
       <Header isExpanded={isExpanded} />
       <MainContent>
         <Hero isExpanded={isExpanded} />
+        <Divider dividerText={"about"} />
         <section className="main-content__section">
           <About />
+        </section>
+        <Divider dividerText={"portfolio"} />
+        <section className="main-content__section">
+          <Portfolio />
         </section>
       </MainContent>
     </>
