@@ -4,8 +4,8 @@ import "./parallax.scss";
 
 const Parallax = () => {
   return (
-    <div className="parallax parallax_icons">
-      <div className="icons">
+    <div className="parallax">
+      <div className="parallax__icons">
         <i className="fab fa-html5 fa-7x"></i>
         <i className="fab fa-css3-alt fa-7x"></i>
         <i className="fab fa-js fa-7x"></i>

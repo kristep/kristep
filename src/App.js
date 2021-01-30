@@ -6,6 +6,7 @@ import Hero from "./features/hero/Hero";
 import About from "./features/about/About";
 import Portfolio from "./features/portfolio/Portfolio";
 import Divider from "./components/divider/Divider";
+import Parallax from "./components/parallax/Parralax";
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -36,9 +37,11 @@ function App() {
           <About />
         </section>
         <Divider dividerText={"portfolio"} />
+        <Parallax />
         <section className="main-content__section">
           <Portfolio />
         </section>
+        <Divider dividerText={"contact"} />
       </MainContent>
     </>
   );
