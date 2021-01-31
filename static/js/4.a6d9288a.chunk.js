@@ -1,0 +1,2 @@
+(this.webpackJsonpmy_portfolio=this.webpackJsonpmy_portfolio||[]).push([[4],{22:function(i,t,e){},25:function(i,t,e){"use strict";e.r(t);var o=e(0);e(1),e(22);t.default=function(i){var t=i.dividerText;return Object(o.jsx)("h2",{className:"divider",id:t,children:t})}}}]);
+//# sourceMappingURL=4.a6d9288a.chunk.js.map
