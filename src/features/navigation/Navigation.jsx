@@ -1,24 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./navigation.scss";
 
-const Navigation = () => {
+const Navigation = ({ visibleSection }) => {
+  const links = ["home", "about", "portfolio", "contact"];
   return (
     <nav className="navigation">
-      <a className="navigation__link active" href="index.html">
-        Home
-      </a>
-      <a className="navigation__link" href="#about">
-        About
-      </a>
-      <a className="navigation__link" href="#portfolio">
-        Portfolio
-      </a>
-      <a className="navigation__link" href="#contact">
-        Contact
-      </a>
+      {links.map((link, i) => (
+        <a
+          key={i}
+          className={`navigation__link ${visibleSection === link && "active"}`}
+          href={`#${link}`}
+        >
+          {link.charAt(0).toUpperCase() + link.slice(1)}
+        </a>
+      ))}
     </nav>
   );
+};
+
+Navigation.propTypes = {
+  visibleSection: PropTypes.string,
 };
 
 export default Navigation;

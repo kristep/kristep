@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
+import { getDimensions } from "./utils/getDimensions";
 
 import MainContent from "./features/main/MainContent";
 import Header from "./features/header/Header";
@@ -7,10 +9,26 @@ import About from "./features/about/About";
 import Portfolio from "./features/portfolio/Portfolio";
 import Divider from "./components/divider/Divider";
 import Parallax from "./components/parallax/Parralax";
+import Contact from "./features/contact/Contact";
+import Footer from "./features/footer/Footer";
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [visibleSection, setVisibleSection] = useState("home");
 
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const portfolioRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const sectionRefs = [
+    { section: "home", ref: homeRef },
+    { section: "about", ref: aboutRef },
+    { section: "portfolio", ref: portfolioRef },
+    { section: "contact", ref: contactRef },
+  ];
+
+  // handling shrinking of header
   useEffect(() => {
     const scroll = () => {
       const scrolled = document.scrollingElement.scrollTop;
@@ -27,22 +45,59 @@ function App() {
     };
   }, []);
 
+  // handling scrolling to element
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 300;
+      const selected = sectionRefs.find(({ section, ref }) => {
+        const element = ref.current;
+        const { offsetBottom, offsetTop } = getDimensions(element);
+        return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+      });
+
+      if (selected && selected.section !== visibleSection) {
+        setVisibleSection(selected.section);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+    // eslint-disable-next-line
+  }, [visibleSection]);
+
   return (
     <>
-      <Header isExpanded={isExpanded} />
+      <Header isExpanded={isExpanded} visibleSection={visibleSection} />
+
       <MainContent>
-        <Hero isExpanded={isExpanded} />
-        <Divider dividerText={"about"} />
-        <section className="main-content__section">
-          <About />
-        </section>
-        <Divider dividerText={"portfolio"} />
-        <Parallax />
-        <section className="main-content__section">
-          <Portfolio />
-        </section>
-        <Divider dividerText={"contact"} />
+        <div ref={homeRef}>
+          <Hero isExpanded={isExpanded} />
+        </div>
+
+        <div ref={aboutRef}>
+          <Divider dividerText={"about"} />
+          <section className="main-content__section">
+            <About />
+          </section>
+        </div>
+
+        <div ref={portfolioRef}>
+          <Divider dividerText={"portfolio"} />
+          <Parallax />
+          <section className="main-content__section">
+            <Portfolio />
+          </section>
+        </div>
+
+        <div ref={contactRef}>
+          <Divider dividerText={"contact"} />
+          <Contact />
+        </div>
       </MainContent>
+      <Footer />
     </>
   );
 }

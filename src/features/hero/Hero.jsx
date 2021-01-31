@@ -8,7 +8,7 @@ import "./hero.scss";
 
 const Hero = ({ isExpanded }) => {
   return (
-    <div className="hero">
+    <div className="hero" id="home">
       <section className="hero__content">
         {isExpanded && <Logo className="hero__logo" />}
         <h1 className="hero__title">front-end developer</h1>
@@ -19,7 +19,11 @@ const Hero = ({ isExpanded }) => {
           </q>
           <figcaption className="hero__quote-author">Kent Beck</figcaption>
         </figure>
-        <Button>Contact me</Button>
+        <Button>
+          <a className="hero__link" href="#contact">
+            Contact me
+          </a>
+        </Button>
       </section>
     </div>
   );

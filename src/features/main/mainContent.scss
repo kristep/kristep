@@ -2,14 +2,11 @@
 @import '../../styles/mixins';
 
 .main-content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
     font-size: $font-size-16;
-    justify-content: center;
+    width: 100vw;
 
     &__section {
-        margin: 8rem 0;
+        margin: 8rem auto;
         width: 75vw;
     }
 }
