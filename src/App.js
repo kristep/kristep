@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, lazy, Suspense } from "react";
 
 import { getDimensions } from "./utils/getDimensions";
-
 import MainContent from "./features/main/MainContent";
 import Header from "./features/header/Header";
 import Hero from "./features/hero/Hero";
-import About from "./features/about/About";
-import Portfolio from "./features/portfolio/Portfolio";
-import Divider from "./components/divider/Divider";
-import Parallax from "./components/parallax/Parralax";
-import Contact from "./features/contact/Contact";
 import Footer from "./features/footer/Footer";
+
+const About = lazy(() => import("./features/about/About"));
+const Portfolio = lazy(() => import("./features/portfolio/Portfolio"));
+const Divider = lazy(() => import("./components/divider/Divider"));
+const Parallax = lazy(() => import("./components/parallax/Parralax"));
+const Contact = lazy(() => import("./features/contact/Contact"));
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -27,6 +27,8 @@ function App() {
     { section: "portfolio", ref: portfolioRef },
     { section: "contact", ref: contactRef },
   ];
+
+  const renderLoader = () => <p>Loading...</p>;
 
   // handling shrinking of header
   useEffect(() => {
@@ -76,26 +78,29 @@ function App() {
         <div ref={homeRef}>
           <Hero isExpanded={isExpanded} />
         </div>
-
-        <div ref={aboutRef}>
-          <Divider dividerText={"about"} />
-          <section className="main-content__section">
-            <About />
-          </section>
-        </div>
-
-        <div ref={portfolioRef}>
-          <Divider dividerText={"portfolio"} />
-          <Parallax />
-          <section className="main-content__section">
-            <Portfolio />
-          </section>
-        </div>
-
-        <div ref={contactRef}>
-          <Divider dividerText={"contact"} />
-          <Contact />
-        </div>
+        <Suspense fallback={renderLoader()}>
+          <div ref={aboutRef}>
+            <Divider dividerText={"about"} />
+            <section className="main-content__section">
+              <About />
+            </section>
+          </div>
+        </Suspense>
+        <Suspense fallback={renderLoader()}>
+          <div ref={portfolioRef}>
+            <Divider dividerText={"portfolio"} />
+            <Parallax />
+            <section className="main-content__section">
+              <Portfolio />
+            </section>
+          </div>
+        </Suspense>
+        <Suspense fallback={renderLoader()}>
+          <div ref={contactRef}>
+            <Divider dividerText={"contact"} />
+            <Contact />
+          </div>
+        </Suspense>
       </MainContent>
       <Footer />
     </>

@@ -1,7 +1,9 @@
 @import '../../styles/base/base';
 
+$_background-color-divider: lighten($color-dark, 5%);
+
 .divider {
-    background-color: $color-dark;
+    background-color: $_background-color-divider;
     color: $color-white;
     font-weight: bold;
     letter-spacing: 3px;

@@ -26,5 +26,9 @@ $_background-color: transparentize($color-dark, 0.7);
         position: relative;
         top: 2rem;
         width: 17rem;
+
+        @include respond-to($breakpoint-md, max) {
+            top: 0;
+        }
     }
 }

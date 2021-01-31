@@ -16,6 +16,14 @@
 html {
     font-size: $font-size-reset;
     scroll-behavior: smooth;
+
+    @include respond-to($breakpoint-md, max) {
+        font-size: $font-size-reset-md;
+    }
+
+    @include respond-to($breakpoint-sm, max) {
+        font-size: $font-size-reset-sm;
+    }
 }
 
 body {

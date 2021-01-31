@@ -1,4 +1,5 @@
 @import '../../styles/base/base';
+@import '../../styles/mixins';
 
 .parallax {
     background-attachment: fixed;
@@ -10,6 +11,11 @@
     padding-top: 5rem;
     width: 100%;
 
+    @include respond-to($breakpoint-md, max) {
+        height: 16rem;
+        padding-top: 3rem;
+    }
+
     &__icons {
         align-items: center;
         display: flex;
@@ -17,6 +23,15 @@
         justify-content: space-around;
         margin: 0 auto;
         max-width: 90rem;
+        width: 90%;
+
+        @include respond-to($breakpoint-lg, max) {
+            font-size: $font-size-14;
+        }
+
+        @include respond-to($breakpoint-md, max) {
+            font-size: $font-size-12;
+        }
 
         i {
             color: $color-white;

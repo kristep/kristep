@@ -7,6 +7,14 @@
 
     &__section {
         margin: 8rem auto;
+        max-width: 120rem;
         width: 75vw;
+
+        @include respond-to($breakpoint-lg, max) {
+            width: 80vw;
+        }
+        @include respond-to($breakpoint-sm, max) {
+            width: 90vw;
+        }
     }
 }

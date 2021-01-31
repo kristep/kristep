@@ -28,8 +28,12 @@ $_background-color: transparentize($color-dark, 0.6);
         text-align: center;
         width: 60%;
 
-        @include respond-to(785, max) {
+        @include respond-to($breakpoint-md, max) {
             width: 80%;
+        }
+
+        @include respond-to($breakpoint-sm, max) {
+            width: 90%;
         }
     }
 
@@ -48,6 +52,7 @@ $_background-color: transparentize($color-dark, 0.6);
 
     &__quote {
         font-size: $font-size-18;
+        padding: 0 2rem;
         text-align: left;
     }
 

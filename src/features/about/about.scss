@@ -1,21 +1,40 @@
 @import '../../styles/base/base';
+@import '../../styles/mixins';
 
 .about {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @include respond-to($breakpoint-lg, max) {
+        width: 105%;
+    }
+
+    @include respond-to($breakpoint-md, max) {
+        flex-direction: column;
+    }
 
     &__photo {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
             0 6px 20px 0 rgba(0, 0, 0, 0.19);
         height: auto;
         max-width: 30rem;
+        width: 35%;
+
+        @include respond-to($breakpoint-md, max) {
+            margin-bottom: 4rem;
+            width: 50%;
+        }
     }
 
     &__description {
         flex-basis: 65%;
-        padding: 0 3rem;
+        padding-left: 3rem;
+
+        @include respond-to($breakpoint-md, max) {
+            padding: 0;
+        }
     }
 
     &__title {
