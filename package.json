@@ -1,5 +1,6 @@
 {
-  "name": "portfolio_react",
+  "name": "my_portfolio",
+  "homepage": "http://kristep.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "npm run -s lint:prettier:check && npm run -s lint:eslint:check && npm run -s lint:stylelint:check",
     "lint:fix": "npm run -s lint:prettier:fix",
