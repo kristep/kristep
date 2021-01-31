@@ -12,7 +12,7 @@ const Portfolio = () => {
     <div className="portfolio">
       <Project
         image={cocktail}
-        href="https://kristep.github.io/coctails/"
+        href="https://kristep.github.io/cocktails/"
         title="Find Your Cocktail"
       >
         <>
