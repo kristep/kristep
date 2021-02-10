@@ -1,5 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import profile from "../../images/profile.jpg";
 
 import "./about.scss";
@@ -44,10 +43,13 @@ const About = () => {
             <li className="about__skills-list-item">React</li>
             <li className="about__skills-list-item">Python (Flask)</li>
             <li className="about__skills-list-item">
-              Work as a team member and individually
+              make responsive and accessible web pages/applications
             </li>
             <li className="about__skills-list-item">
-              Learn new subjects/improve skills fast and productive
+              work as a team member and individually
+            </li>
+            <li className="about__skills-list-item">
+              learn new subjects/improve skills fast and productive
             </li>
           </ul>
         </section>
